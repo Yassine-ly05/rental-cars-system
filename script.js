@@ -230,6 +230,9 @@ document.addEventListener("DOMContentLoaded", function () {
     firstNavLink?.classList.add("active");
   }
 });
+function sayHello() {
+  console.log("hello");
+}
 document.addEventListener("DOMContentLoaded", () => {
   const formTitle = document.getElementById("form-title");
   const toggleLink = document.getElementById("toggle");
