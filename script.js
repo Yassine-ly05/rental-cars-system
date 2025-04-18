@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // =============================================
-  // SMOOTH SECTION TRANSITIONS (UPDATED)
-  // =============================================
-
   // Cache DOM elements
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll('nav a:not([onclick])[href^="#"]'); // Exclude booking link
@@ -256,4 +252,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     document.querySelector(".form-box").classList.toggle("signup-mode");
   });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // =============================================
+  // DATE INPUT PLACEHOLDER FIX
+  // =============================================
+  const dateInputs = document.querySelectorAll('input[type="date"]');
+
+  // Set initial placeholder text
+  dateInputs.forEach((input) => {
+    if (!input.value) {
+      input.classList.add("empty");
+    }
+  });
+
+  // Update on change
+  dateInputs.forEach((input) => {
+    input.addEventListener("change", function () {
+      if (this.value) {
+        this.classList.remove("empty");
+      } else {
+        this.classList.add("empty");
+      }
+    });
+
+    input.addEventListener("focus", function () {
+      this.classList.remove("empty");
+    });
+
+    input.addEventListener("blur", function () {
+      if (!this.value) {
+        this.classList.add("empty");
+      }
+    });
+  });
+
+  // [Rest of your original JavaScript code remains exactly the same]
 });
